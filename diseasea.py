@@ -10,7 +10,7 @@ st.title('Dieseas Prediction App')
 st.info('This app helps you predict the kind of illness you have')
 with st.expander('Data'):
     st.write('**Raw Data**')
-    df = pd.read_csv('C:/Users/Admin/OneDrive/Documents/Python Scripts/Training.csv')
+    df = pd.read_csv('diseasea.py')
     df
     
 

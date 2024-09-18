@@ -1,11 +1,20 @@
 import numpy as np
 import pandas as pd
 import math
+import steamlit as st
 
 from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing,svm
 from sklearn.model_selection import train_test_split
-df = pd.read_csv('C:/Users/Admin/OneDrive/Documents/Python Scripts/Training.csv')
+st.title('Dieseas Prediction App')
+st.info('This app helps you predict the kind of illness you have')
+with st.expander('Data'):
+    st.write('**Raw Data**')
+    df = pd.read_csv('C:/Users/Admin/OneDrive/Documents/Python Scripts/Training.csv')
+    df
+    
+
+
 # print(df.head())
 
 df['labels'] = df.iloc[:,-2]
@@ -28,12 +37,13 @@ col_names = col_names[:-3]
 # print(col_names)
 patient_sympt = []
 
-for col in col_names:
-    sympt = input(f'Do you have {col} (yes/no): ')  # Asking for the symptom
-    if sympt.lower() == 'yes':
-        patient_sympt.append(1)  # 1 for "yes"
-    else:
-        patient_sympt.append(0)  # 0 for "no"
+
+# for col in col_names:
+#     sympt = input(f'Do you have {col} (yes/no): ')  # Asking for the symptom
+#     if sympt.lower() == 'yes':
+#         patient_sympt.append(1)  # 1 for "yes"
+#     else:
+#         patient_sympt.append(0)  # 0 for "no"
 patient_sympt = np.array(patient_sympt)
 patient_sympt = patient_sympt.reshape(1,-1)
 prediction = classifier.predict(patient_sympt)

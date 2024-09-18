@@ -1,1 +1,1 @@
-# steamlit_diseases
+# streamlit_diseases

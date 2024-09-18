@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import math
-import steamlit as st
+import streamlit as st
 
 from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing,svm
